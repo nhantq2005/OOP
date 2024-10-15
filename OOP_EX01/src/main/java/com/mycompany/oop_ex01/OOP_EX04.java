@@ -4,14 +4,16 @@
  */
 package com.mycompany.oop_ex01;
 
+import java.util.Arrays;
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 /**
  *
  * @author admin
  */
 public class OOP_EX04 {
-    public static boolean soNT(int n){
+    public static boolean isPrime(int n){
         if(n<2)
             return false;
         for(int i = 2;i<=Math.sqrt(n);i++){
@@ -26,8 +28,9 @@ public class OOP_EX04 {
         Scanner sc = new Scanner(System.in);
         int []arr = new int[n];
         for(int i =0;i<n;i++){
-            System.out.printf("NHAP PHAN TU THU %d: ",i);
-            arr[i]=sc.nextInt();
+//            System.out.printf("NHAP PHAN TU THU %d: ",i);
+//            arr[i]=sc.nextInt();
+              arr[i] = (int)(Math.random()*10);
         }
         return arr;
     }
@@ -40,37 +43,6 @@ public class OOP_EX04 {
         System.out.println("");
     }
     
-    public static int tongSNT(int []arr){
-        int tong = 0;
-        for(var x:arr){
-            if(soNT(x)){
-                tong+=x;
-            }
-        }
-        return tong;
-    }
-    
-    @SuppressWarnings("empty-statement")
-    public static String findMaxMin(int []arr){
-        int max = arr[0];
-        int min = arr[0];
-        
-        if (arr.length == 0) {
-            return "*";
-        } else {
-            for (var x : arr) {
-                if (x < min) {
-                    min = x;
-                }
-                if (x > max) {
-                    max = x;
-                }
-            }
-            return "MAX: "+max+" MIN: "+min;
-        }
-
-    }
-    
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("NHAP DO KICH THUOC MANG: ");
@@ -78,9 +50,20 @@ public class OOP_EX04 {
         int []arr= new int[n];
         arr = inputArray(n);
         outputArray(arr);
-        int tongNT = tongSNT(arr);
-        System.out.printf("TONG CAC SO NGUYEN TONG: %d",tongNT);
-        String maxmin = findMaxMin(arr);
-        System.out.println(maxmin);
+//        Cau a
+        System.out.printf("TONG CAC SO NGUYEN TO: %d\n",IntStream.of(arr).filter(x->isPrime(x)).sum());
+//        Cau b
+        System.out.printf("GIA TRI LON NHAT TRONG MANG LA: %d\n",IntStream.of(arr).filter(x->x>0).max().orElse(0));
+        System.out.printf("GIA TRI NHO NHAT TRONG MANG LA: %d\n",IntStream.of(arr).filter(x->x>0).min().orElse(0));
+//        Cau c
+        System.out.printf("SO NGUYEN TO NHO NHAT TRONG MANG: %d\n",IntStream.of(arr).filter(x->isPrime(x)).min().getAsInt());
+//        Cau d
+        IntStream.of(arr).filter(x->isPrime(x)).sorted().forEach(System.out::print);
+        IntStream.of(arr).filter(x->isPrime(x)==false).forEach(System.out::print);
+//Cau e
+        System.out.println("NHAP SO CAN TIM: ");
+        int findValue = sc.nextInt();
+        System.out.printf("VI TRI CUA %d LA: %d\n",findValue,Arrays.binarySearch(arr,findValue));
+
     }
 }

@@ -18,7 +18,7 @@ public class OOP_EX01 {
         Scanner sc = new Scanner(System.in);
         int guessValue;
         do {
-            System.out.println("NHAP SO BAN DOAN: ");
+            System.out.print("NHAP SO BAN DOAN: ");
             guessValue = sc.nextByte();
             
             if(guessValue>randomValue){

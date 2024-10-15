@@ -45,7 +45,7 @@ public class OOP_EX05 {
     public static void maxRow(int[][]matrix, int row){
         
         for(int i =0;i<row;i++){
-            var max = IntStream.of(matrix[i]).max();
+            var max = IntStream.of(matrix[i]).max().getAsInt();
             System.out.println("GIA TRI LON NHAT DONG "+i+": "+max);
             
         }
