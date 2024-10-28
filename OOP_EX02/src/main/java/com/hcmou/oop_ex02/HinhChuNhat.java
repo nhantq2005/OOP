@@ -14,13 +14,13 @@ public class HinhChuNhat {
     private Diem diemPhai;
 
     public HinhChuNhat(Diem diemTrai, Diem diemPhai) throws java.lang.Exception {
-        if (diemPhai.getHoanhDo() <= diemTrai.getHoanhDo()
-                && diemTrai.getTungDo() <= diemPhai.getTungDo()) {
+//        if (diemPhai.getHoanhDo() <= diemTrai.getHoanhDo()
+//                && diemTrai.getTungDo() <= diemPhai.getTungDo()) {
         this.diemTrai = diemTrai;
         this.diemPhai = diemPhai;
-        } else {
-            throw Exception("Invalid value");
-        }
+//        } else {
+//            throw Exception("Invalid value");
+//        }
     }
 
     public double tinhChuVi() {
@@ -63,7 +63,7 @@ public class HinhChuNhat {
         this.diemPhai = diemPhai;
     }
 
-    private Exception Exception(String invalid_value) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+//    private Exception Exception(String invalid_value) {
+//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+//    }
 }
