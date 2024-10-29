@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.hcmou.oop_ex02;
+package com.hcmou.oop_ex02.BAI_02;
+
+import com.hcmou.oop_ex02.BAI_01.Diem;
 
 /**
  *

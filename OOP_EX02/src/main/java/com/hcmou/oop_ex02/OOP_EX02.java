@@ -4,6 +4,10 @@
  */
 package com.hcmou.oop_ex02;
 
+import com.hcmou.oop_ex02.BAI_01.Diem;
+import com.hcmou.oop_ex02.BAI_02.DoanThang;
+import com.hcmou.oop_ex02.BAI_03.HinhChuNhat;
+
 /**
  *
  * @author admin
