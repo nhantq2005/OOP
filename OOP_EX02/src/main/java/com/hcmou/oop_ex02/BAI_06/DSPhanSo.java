@@ -3,12 +3,24 @@ package com.hcmou.oop_ex02.BAI_06;
 import com.hcmou.oop_ex02.BAI_05.PhanSo;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class DSPhanSo {
-    private ArrayList<PhanSo> danhSach = new ArrayList<>();
+    private List<PhanSo> danhSach = new ArrayList<>();
 
     public void them(PhanSo ps){
         danhSach.add(ps);
+    }
+    
+    public void them(PhanSo... ps){
+        this.danhSach.addAll(Arrays.asList(ps));
+    }
+    
+    public void them(){
+        PhanSo ps = new PhanSo();
+        ps.nhapPS();
+        this.danhSach.add(ps);
     }
 
     public void hienThi(){

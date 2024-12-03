@@ -13,11 +13,15 @@ public class DemoBai06 {
         danhSachPS.them(ps1);
         danhSachPS.them(ps2);
         danhSachPS.them(ps3);
+        danhSachPS.them(ps2,ps1);
+        danhSachPS.them();
+        
+        danhSachPS.hienThi();
 
         //Xoa
-//        danhSachPS.xoa(new PhanSo(-2,4));
-//        danhSachPS.hienThi();
-//        System.out.println();
+        danhSachPS.xoa(new PhanSo(7,5));
+        danhSachPS.hienThi();
+        System.out.println();
 
         //Tinh tong
         System.out.print("TONG DANH SACH: ");

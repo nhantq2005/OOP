@@ -4,12 +4,15 @@
  */
 package com.hcmou.oop_ex02.BAI_05;
 
+import java.util.Scanner;
+
 /**
  *
  * @author admin
  */
 public class PhanSo {
 
+    private static final Scanner sc = new Scanner(System.in);
     private int tuSo;
     private int mauSo;
 
@@ -24,6 +27,14 @@ public class PhanSo {
         this.tuSo = 0;
         this.mauSo = 1;
     }
+    
+    public PhanSo nhapPS(){
+        System.out.print("Tu so: ");
+        this.tuSo = sc.nextInt();
+        System.out.print("Mau so: ");
+        this.mauSo = sc.nextInt();
+        return this;
+    } 
 
 //    Tìm ước số chung lớn nhất hai số nguyên.
     public static int UCLN(int a, int b) {
