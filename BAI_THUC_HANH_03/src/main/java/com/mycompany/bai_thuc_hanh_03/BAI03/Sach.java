@@ -16,6 +16,20 @@ public class Sach extends SanPham {
         this.soTrang = soTrang;
     }
     
+    public Sach(){
+        super();
+    }
+
+    @Override
+    public void nhap() {
+        super.nhap(); 
+        System.out.print("Nhap so trang: ");
+        this.soTrang=sc.nextInt();
+    }
+
+    
+    
+    
     @Override
     public String toString(){
         return String.format("""

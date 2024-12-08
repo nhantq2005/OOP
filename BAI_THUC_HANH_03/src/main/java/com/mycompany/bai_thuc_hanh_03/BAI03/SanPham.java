@@ -4,6 +4,8 @@
  */
 package com.mycompany.bai_thuc_hanh_03.BAI03;
 
+import java.util.Scanner;
+
 /**
  *
  * @author trung
@@ -17,6 +19,13 @@ public abstract class SanPham implements Comparable<SanPham>{
     private String nhaSanXuat;
     private double giaBan;
     
+    Scanner sc = new Scanner(System.in);
+    
+    public SanPham(){
+        cnt++;
+        this.maSP = String.format("SP%05d", cnt);
+    }
+    
     public SanPham(String tenSP, String moTa, String nhaSanXuat, double giaBan){
         cnt++;
         this.maSP = String.format("SP%05d", cnt);
@@ -24,6 +33,18 @@ public abstract class SanPham implements Comparable<SanPham>{
         this.moTa = moTa;
         this.nhaSanXuat = nhaSanXuat;
         this.giaBan = giaBan;
+    }
+    
+    public void nhap(){
+        System.out.println("=====NHAP THONG TIN=====");
+        System.out.print("Nhap ten SP: ");
+        this.tenSP=sc.nextLine();
+        System.out.print("Nhap mo ta: ");
+        this.moTa=sc.nextLine();
+        System.out.print("Nhap nha xuat ban: ");
+        this.nhaSanXuat=sc.nextLine();
+        System.out.print("Nhap gia ban: ");
+        this.giaBan=sc.nextInt();
     }
     
     public int sapXep(SanPham sp){
@@ -46,7 +67,7 @@ public abstract class SanPham implements Comparable<SanPham>{
                              this.giaBan);
     }
     
-
+    
 
     /**
      * @return the maSP

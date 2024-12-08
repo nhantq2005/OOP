@@ -4,6 +4,8 @@
  */
 package com.mycompany.quan_ly_tai_lieu;
 
+import java.util.Scanner;
+
 /**
  *
  * @author trung
@@ -15,10 +17,24 @@ public abstract class TaiLieu {
     private String nhaXuatBan;
     private int soBan;
     
+    Scanner sc = new Scanner(System.in);
+    
+    public TaiLieu(){
+        this.maTaiLieu = String.format("TL%02d",maSo++);
+    }
+    
     public TaiLieu(String nhaXuatBan, int soPhatHanh){
         this.maTaiLieu = String.format("TL%02d",maSo++);
         this.nhaXuatBan = nhaXuatBan;
         this.soBan = soPhatHanh;
+    }
+    
+    public void nhap(){
+        System.out.println("=====NHAP THONG TIN=====");
+        System.out.print("Nhap nha xuat ban: ");
+        this.nhaXuatBan = sc.nextLine();
+        System.out.print("Nhap so ban: ");
+        this.soBan=sc.nextInt();
     }
 
     @Override

@@ -11,6 +11,10 @@ package com.mycompany.quan_ly_tai_lieu;
 public class Sach extends TaiLieu {
     private String tacGia;
     private int soTrang;
+    
+        public Sach(){
+        super();
+    }
 
     public Sach(String nhaXuatBan, int soBan, String tacGia, int soTrang) {
         super(nhaXuatBan, soBan);
@@ -28,6 +32,16 @@ public class Sach extends TaiLieu {
         So trang: %d
         """
         ,super.toString(), this.tacGia, this.soTrang);
+    }
+
+    @Override
+    public void nhap() {
+        super.nhap(); 
+        String bienGia=sc.nextLine();
+        System.out.print("Nhap tac gia: ");
+        this.tacGia=sc.nextLine();
+        System.out.println("Nhap so trang");
+        this.soTrang=sc.nextInt();
     }
     
     

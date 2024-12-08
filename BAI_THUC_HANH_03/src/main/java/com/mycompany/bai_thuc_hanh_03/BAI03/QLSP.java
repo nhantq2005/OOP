@@ -4,7 +4,9 @@
  */
 package com.mycompany.bai_thuc_hanh_03.BAI03;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -15,8 +17,15 @@ import java.util.stream.Collectors;
 public class QLSP {
     private List<SanPham> ds = new ArrayList();
     
-    public void themSP (SanPham sp ){
-        getDs().add(sp);
+    public void themSP (SanPham...sp ){
+        this.ds.addAll(Arrays.asList(sp));
+    }
+    
+    public void themSP(String loaiSP) throws ClassNotFoundException, NoSuchMethodException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
+        Class c = Class.forName(loaiSP);
+        SanPham s1 = (SanPham) c.getDeclaredConstructor().newInstance();
+        s1.nhap();
+        this.ds.add(s1);
     }
     
     public void hienThi(){
@@ -67,7 +76,6 @@ public class QLSP {
         return ds;
     }
     
-    public 
 
     /**
      * @param ds the ds to set

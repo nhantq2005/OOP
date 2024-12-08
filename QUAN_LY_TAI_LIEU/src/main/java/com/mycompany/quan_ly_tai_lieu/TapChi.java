@@ -11,6 +11,10 @@ package com.mycompany.quan_ly_tai_lieu;
 public class TapChi extends TaiLieu {
     private int soPhatHanh;
     private int thangPhatHanh;
+    
+    public TapChi(){
+        super();
+    }
 
     public TapChi(String nhaXuatBan, int soBan, int soPhatHanh, int thangPhatHanh) {
         super(nhaXuatBan, soBan);
@@ -59,7 +63,14 @@ public class TapChi extends TaiLieu {
     public void setThangPhatHanh(int thangPhatHanh) {
         this.thangPhatHanh = thangPhatHanh;
     }
-    
-    
+
+    @Override
+    public void nhap() {
+        super.nhap();
+        System.out.print("Nhap so phat hanh: ");
+        this.soPhatHanh=sc.nextInt();
+        System.out.print("Nhap thang hanh: ");
+        this.thangPhatHanh=sc.nextInt();
+    }
     
 }

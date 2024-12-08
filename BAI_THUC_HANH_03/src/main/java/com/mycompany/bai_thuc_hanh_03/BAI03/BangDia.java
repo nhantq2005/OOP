@@ -15,6 +15,19 @@ public class BangDia extends SanPham {
         super(tenSP, moTa, nhaSanXuat, giaBan);
         this.doDai = doDai;
     }
+    
+    public BangDia(){
+        super();
+    }
+
+    @Override
+    public void nhap() {
+        super.nhap(); 
+        System.out.print("Nhap ten SP: ");
+        this.doDai=sc.nextDouble();
+    }
+    
+    
 
     /**
      * @return the doDai

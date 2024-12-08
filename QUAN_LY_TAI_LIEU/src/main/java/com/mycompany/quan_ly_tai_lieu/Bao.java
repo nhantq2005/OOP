@@ -15,6 +15,10 @@ public class Bao extends TaiLieu {
         super(nhaXuatBan, soBan);
         this.ngayPhatHanh = ngayPhatHanh;
     }
+    
+        public Bao(){
+        super();
+    }
 
     @Override
     public String toString() {
@@ -28,6 +32,12 @@ public class Bao extends TaiLieu {
        );
     }
     
+    @Override
+    public void nhap(){
+        super.nhap();
+        System.out.print("Nhap ngay phat hanh: ");
+        this.ngayPhatHanh=sc.nextInt();
+    }
     
 
     /**
