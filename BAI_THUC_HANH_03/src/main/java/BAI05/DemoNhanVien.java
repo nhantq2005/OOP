@@ -26,6 +26,7 @@ public class DemoNhanVien {
 //        ql.traCuu("Nhan").forEach(nv->System.out.println(nv));
 //        System.out.println(ql.traCuu("121"));
           ql.traCuu("LA").forEach(nv->System.out.println(nv));
+          System.out.println(nv5 instanceof BoPhanA);
 
         
     }
